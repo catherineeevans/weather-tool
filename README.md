@@ -69,8 +69,3 @@ To run all tests:
 ```bash
 python -m unittest discover -v
 ```
-
-Unit tests cover: 
-- Successful API responses (Fahrenheit and Celsuis)
-- Empty or invalid zip codes 
-- API codes (401, 404, timeout)

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background: linear-gradient(to bottom, #cce7ff, #e6f2ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 2rem;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            margin-bottom: 1rem;
+        }
+        form {
+            margin-top: 1rem;
+        }
+        input, button {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.25rem 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            box-sizing: border-box; 
+        }
+
+        button {
+            background-color: #4da6ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #3399ff;
+        }
+        .error {
+            color: red;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>What's the weather doing today?</h1>
+        <p>Enter a zip code to get the current weather:</p>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form action="/weather" method="GET">
+            <label for="zip_code">Enter Zip Code:</label>
+            <input type="text" id="zip_code" name="zip_code" placeholder="e.g. 20001" required>
+            
+            <label for="units">Units:</label>
+            <select id="units" name="units">
+                <option value="imperial">Fahrenheit</option>
+                <option value="metric">Celsius</option>
+            </select>
+        
+            <button type="submit">Check Weather</button>
+        </form>
+    </div>
+</body>
+</html>

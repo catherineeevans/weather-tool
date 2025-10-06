@@ -29,8 +29,8 @@ The overall intention is to lookup weather by zip code.
 1. **Clone this repository**
 
 ```bash
-git clone <repository-url> ###TODO: need to update this once it's on GitHUb
-cd <repository-folder>
+git clone git@github.com:catherineeevans/weather-tool.git
+cd weather-tool
 ```
 
 2. **Install Python dependencies**
